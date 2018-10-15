@@ -2,7 +2,6 @@
 set -x
 set -e
 
-DEST=./rootfs
 . ./config.sh
 
 DEST=$(realpath "$DEST")
