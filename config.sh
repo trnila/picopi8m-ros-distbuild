@@ -1,5 +1,6 @@
 export DISTRO=bionic
 export HOSTNAME=picopi
+export KERNEL_BRANCH=trn_loadable_imx_rpmsg
 export PACKAGES="
   openssh-server
   vim

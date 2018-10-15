@@ -15,11 +15,11 @@ fi
 
 # build kernel
 if [ ! -d linux ]; then
-  git clone --depth 1 https://github.com/trnila/linux-tn linux
-  git checkout "$KERNEL_BRANCH"
+  git clone https://github.com/trnila/linux-tn linux
 fi
 (
   cd linux
+  git checkout "$KERNEL_BRANCH"
   export CROSS_COMPILE=aarch64-linux-gnu-
   export ARCH=arm64
   make tn_imx8_defconfig
