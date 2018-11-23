@@ -11,25 +11,7 @@ if [ -d "$DEST" ]; then
   exit 1
 fi
 
-
-# build kernel
-if [ ! -d linux ]; then
-  git clone https://github.com/trnila/linux-tn linux
-fi
-(
-  cd linux
-  git checkout "$KERNEL_BRANCH"
-  export CROSS_COMPILE=aarch64-linux-gnu-
-  export ARCH=arm64
-  make tn_imx8_defconfig
-  make "-j$(nproc)"
-
-  mkdir -p "$DEST/boot"
-  cp -v arch/arm64/boot/Image "$DEST/boot"
-  cp -v arch/arm64/boot/dts/freescale/*.dtb "$DEST/boot"
-  make modules_install INSTALL_MOD_PATH="$DEST/"
-)
-
+./build_kernel_deb.sh
 
 cleanup() {
   umount "$DEST/mnt"

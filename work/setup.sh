@@ -15,7 +15,10 @@ echo "::1 $HOSTNAME" >> /etc/hosts
 
 apt-get install -y gnupg
 
-# setup ros repository
+# install local packages (ie linux kernel)
+dpkg -i /mnt/packages/*.deb
+
+# setup ros repository 
 mkdir -p /etc/apt/sources.list.d/
 echo "deb http://packages.ros.org/ros-shadow-fixed/ubuntu $DISTRO main" > /etc/apt/sources.list.d/ros.list
 apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
