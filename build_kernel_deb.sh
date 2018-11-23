@@ -63,5 +63,5 @@ find "$MODULES" -type f -name '*.o' -delete
 # build packages
 dpkg-deb -b "$TEMP_DIR/linux/"
 dpkg-deb -b "$TEMP_DIR/linux-headers/"
-mv "$TEMP_DIR"/*.deb work/packages/
+mv "$TEMP_DIR"/*.deb ../work/packages/
 echo "Packages built successfully"

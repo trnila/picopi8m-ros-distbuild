@@ -5,6 +5,7 @@
 - chroot
 - qemu-user-static 
 - gcc-aarch64-linux-gnu
+- dpkg-deb
 
 ## build
 ```sh

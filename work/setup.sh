@@ -13,6 +13,7 @@ echo "$HOSTNAME" > /etc/hostname
 echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
 echo "::1 $HOSTNAME" >> /etc/hosts
 
+apt-get update
 apt-get install -y gnupg
 
 # install local packages (ie linux kernel)
