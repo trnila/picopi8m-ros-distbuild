@@ -1,0 +1,13 @@
+image: ubuntu:18.10
+build:
+  script:
+    - apt-get update
+    - apt-get install -y git make gcc gcc-aarch64-linux-gnu bc binfmt-support qemu-user-static debootstrap xz-utils
+    - ./build.sh
+  artifacts:
+    paths: 
+      - work/packages/linux-headers-picopim8.deb
+      - work/packages/linux-image-picopim8.deb
+      - work/packages/linux-libc-dev-picopim8.deb
+      - picopi-ros.rootfs.tar.xz 
+
