@@ -24,7 +24,6 @@ mkdir -p "$DEST/mnt"
 mount --bind ./work "$DEST/mnt"
 rm -f "$DEST/proc" || true
 mkdir -p "$DEST/proc"
-mount -t proc none "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
 (cd rootfs && tar -cJf ../picopi-ros.rootfs.tar.xz .)
 

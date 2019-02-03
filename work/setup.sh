@@ -3,7 +3,9 @@ set -x
 set -e
 
 export PATH=/sbin:/usr/sbin:/bin/:/usr/bin
+mount proc /proc -t proc
 /debootstrap/debootstrap --second-stage
+mount proc /proc -t proc # need to mount it again? otherwise apt-key fails
 
 # copy base files
 cp -r /mnt/files/* /
