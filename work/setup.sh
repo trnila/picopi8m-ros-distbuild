@@ -22,7 +22,7 @@ dpkg -i /mnt/packages/*.deb
 # setup ros repository 
 mkdir -p /etc/apt/sources.list.d/
 echo "deb http://packages.ros.org/ros-shadow-fixed/ubuntu $DISTRO main" > /etc/apt/sources.list.d/ros.list
-apt-key adv --keyserver hkp://ipv4.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+apt-key add /mnt/ros-repo.pub
 
 # install packages
 apt-get update
