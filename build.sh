@@ -14,8 +14,8 @@ fi
 ./build_kernel_deb.sh
 
 cleanup() {
-  umount "$DEST/mnt"
-  umount "$DEST/proc"
+  umount "$DEST/mnt" || true
+  umount "$DEST/proc" || true
 }
 trap cleanup EXIT
 
@@ -25,6 +25,7 @@ mount --bind ./work "$DEST/mnt"
 rm -f "$DEST/proc" || true
 mkdir -p "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
+cleanup
 (cd rootfs && tar -cJf ../picopi-ros.rootfs.tar.xz .)
 
 echo "Successfully built to $DEST"
