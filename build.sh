@@ -25,7 +25,6 @@ mount --bind ./work "$DEST/mnt"
 rm -f "$DEST/proc" || true
 mkdir -p "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
-cleanup
-(cd rootfs && tar -cJf ../picopi-ros.rootfs.tar.xz .)
+(cd rootfs && tar --one-file-system -cJf ../picopi-ros.rootfs.tar.xz .)
 
 echo "Successfully built to $DEST"
