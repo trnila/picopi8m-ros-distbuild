@@ -27,7 +27,7 @@ mkdir -p "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
 
 # install m4sdk
-git clone https://github.com/trnila/picopi-m4sdk /opt/freertos-tn
+git clone https://github.com/trnila/picopi-m4sdk "$DEST/opt/freertos-tn"
 
 # package rootfs
 (cd rootfs && tar --one-file-system -cJf ../picopi-ros.rootfs.tar.xz .)
