@@ -15,4 +15,6 @@ export PACKAGES="
   gcc-arm-none-eabi
   minicom
   device-tree-compiler
+  i2c-tools
+  gdb
 "
