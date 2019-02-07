@@ -66,6 +66,8 @@ Provides: linux-headers
 Description: Modified linux kernel-headers used for building out-of-tree kernel modules for pico-pi-imx8m
 EOF
 
+  make M=scripts clean
+
   # populate aarch64-linux-gnu-gcc compiler as gcc and add to the PATH
   # so we can build scripts for arm target
   mkdir "$dst/fake_bin"
@@ -75,7 +77,6 @@ EOF
   done
   export PATH="$dst/fake_bin:$PATH"
 
-  make M=scripts clean
   export QEMU_LD_PREFIX=/usr/aarch64-linux-gnu/
   make scripts
   rm -rf "$dst/fake_bin"
