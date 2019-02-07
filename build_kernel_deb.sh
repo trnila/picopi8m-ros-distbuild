@@ -105,7 +105,9 @@ Description: Linux support headers for userspace development
  libraries.
 EOF
 
-make headers_install ARCH=arm64 INSTALL_HDR_PATH="$dst/usr"
+  make headers_install ARCH=arm64 INSTALL_HDR_PATH="$dst/usr"
+  # XXX: this should be installed by headers_install
+  cp include/uapi/linux/rpmsg.h "$dst/usr/include/linux/"
 }
 
 cd linux
