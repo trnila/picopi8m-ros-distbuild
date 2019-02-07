@@ -78,6 +78,7 @@ EOF
   make M=scripts clean
   export QEMU_LD_PREFIX=/usr/aarch64-linux-gnu/
   make scripts
+  rm -rf "$dst/fake_bin"
 
   MODULES="$dst/lib/modules/4.9.88${version}/build"
   mkdir -p "$MODULES"
