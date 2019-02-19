@@ -11,6 +11,7 @@ if [ -d "$DEST" ]; then
   exit 1
 fi
 
+./build_kernel.sh
 ./build_wifi.sh
 ./build_kernel_deb.sh
 
