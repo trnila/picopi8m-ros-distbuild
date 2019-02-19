@@ -26,8 +26,9 @@ rm -f "$DEST/proc" || true
 mkdir -p "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
 
-# install m4sdk
+# install m4sdk and examples
 git clone https://github.com/trnila/picopi-m4sdk "$DEST/opt/freertos-tn"
+git clone https://github.com/trnila/picopi8m-ros-demos "$DEST/root/catkin_ws/src"
 
 # package rootfs
 (cd rootfs && tar --one-file-system -cJf ../picopi-ros.rootfs.tar.xz .)
