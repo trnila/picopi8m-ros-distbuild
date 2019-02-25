@@ -7,6 +7,9 @@ mount proc /proc -t proc
 /debootstrap/debootstrap --second-stage
 mount proc /proc -t proc # need to mount it again? otherwise apt-key fails
 
+# allow to login without password
+passwd -d root
+
 # copy base files
 cp -r /mnt/files/* /
 
