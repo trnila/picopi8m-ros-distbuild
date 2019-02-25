@@ -12,7 +12,7 @@ cd linux
 git checkout "$KERNEL_BRANCH"
 
 if [ ! -f .config ]; then
-  make tn_imx8_defconfig
+  make remoteproc_defconfig
 fi
 
 # make kernel
