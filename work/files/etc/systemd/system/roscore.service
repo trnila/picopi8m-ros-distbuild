@@ -1,0 +1,6 @@
+[Service]
+ExecStart=/bin/bash -c ". /etc/profile; if [ -f /etc/roslaunch.xml ]; then roslaunch --screen /etc/roslaunch.xml; else roscore; fi"
+Environment=ROS_LOG_DIR=/tmp/ros
+
+[Install]
+WantedBy=multi-user.target
