@@ -21,16 +21,17 @@ cleanup() {
 }
 trap cleanup EXIT
 
+# install m4sdk and examples
+git clone https://github.com/trnila/picopi-m4sdk "$DEST/opt/freertos-tn"
+git clone https://github.com/trnila/picopi8m-ros-demos "$DEST/root/catkin_ws/src"
+
+# bootstrap base system
 debootstrap --foreign --arch arm64 "$DISTRO" "$DEST"  http://ports.ubuntu.com/
 mkdir -p "$DEST/mnt"
 mount --bind ./work "$DEST/mnt"
 rm -f "$DEST/proc" || true
 mkdir -p "$DEST/proc"
 chroot "$DEST" /bin/sh /mnt/setup.sh
-
-# install m4sdk and examples
-git clone https://github.com/trnila/picopi-m4sdk "$DEST/opt/freertos-tn"
-git clone https://github.com/trnila/picopi8m-ros-demos "$DEST/root/catkin_ws/src"
 
 # package rootfs
 (cd rootfs && tar --one-file-system -cJf ../picopi-ros.rootfs.tar.xz .)
