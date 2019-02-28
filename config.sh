@@ -18,4 +18,5 @@ export PACKAGES="
   device-tree-compiler
   i2c-tools
   gdb
+  rsync
 "
