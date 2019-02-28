@@ -2,7 +2,7 @@ image: ubuntu:18.10
 build:
   script:
     - apt-get update
-    - apt-get install -y git make gcc gcc-aarch64-linux-gnu bc binfmt-support qemu-user-static debootstrap xz-utils
+    - apt-get install -y git make gcc gcc-aarch64-linux-gnu bc binfmt-support qemu-user-static debootstrap xz-utils kmod
     - ./build.sh
   artifacts:
     paths: 

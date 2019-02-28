@@ -2,7 +2,7 @@
 
 ## dependencies 
 ```sh
-$ apt-get install -y git make gcc gcc-aarch64-linux-gnu bc binfmt-support qemu-user-static debootstrap xz-utils
+$ apt-get install -y git make gcc gcc-aarch64-linux-gnu bc binfmt-support qemu-user-static debootstrap xz-utils kmod
 ```
 
 ## build
