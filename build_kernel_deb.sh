@@ -54,6 +54,7 @@ EOF
 install -Dv ./arch/arm64/boot/Image "$dst/boot/Image"
 install -Dv ./arch/arm64/boot/dts/freescale/pico*.dtb "$dst/boot/"
 make modules_install INSTALL_MOD_PATH="$dst"
+depmod -a -b "$dst" "$(ls $dst/lib/modules/)"
 rm "$dst/lib/modules/4.9.88${version}/build" # remove broken symlink
 rm "$dst/lib/modules/4.9.88${version}/source" # remove broken symlink
 }
