@@ -38,6 +38,9 @@ rosdep init
 rosdep update
 (cd /root/catkin_ws && rosdep install --from-paths src --ignore-src -r -y)
 
+# enable services
+systemctl enable systemd-networkd
+
 # install newer newlib which has support for M4 hard float
 mkdir /tmp/debs
 wget http://mirrors.kernel.org/ubuntu/pool/universe/n/newlib/libnewlib-dev_3.0.0.20180802-2_all.deb -P /tmp/debs/
