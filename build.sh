@@ -23,7 +23,7 @@ trap cleanup EXIT
 
 # install m4sdk and examples
 git clone https://github.com/trnila/picopi-m4sdk "$DEST/opt/freertos-tn"
-git clone https://github.com/trnila/picopi8m-ros-demos "$DEST/root/catkin_ws/src"
+git clone --recurse-submodules https://github.com/trnila/picopi8m-ros-demos "$DEST/root/catkin_ws/src"
 
 # bootstrap base system
 debootstrap --foreign --arch arm64 "$DISTRO" "$DEST"  http://ports.ubuntu.com/
